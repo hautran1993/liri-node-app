@@ -1,17 +1,19 @@
 
 var keys = require("./keys.js");
 var fs = require("fs");
-var input = process.argv[2];
-var name = process.argv[3];
-
-switch(input){
-  case "my-tweets":
-    grabTweet();
-    break;
-  case "spotify-this-song":
-    grabSong(name);
-    break;
+var input1 = process.argv[2];
+var input2 = process.argv[3];
+function listener(action, name){
+  switch(action){
+    case "my-tweets":
+      grabTweet();
+      break;
+    case "spotify-this-song":
+      grabSong(name);
+      break;
+  }
 }
+listener(input1,input2)
 
 
 //0 as the path
@@ -58,6 +60,12 @@ function grabSong(song){
       });
 }
 
-function grabMovie(){
-  var OMDBUrl = "http://www.omdbapi.com/?apikey=" + keys.api_key;
-}
+// function grabMovie(){
+//   var OMDBUrl = "http://www.omdbapi.com/?apikey=" + keys.api_key;
+//
+// }
+
+//make double words possible ex: hey you
+//finish grabMovie
+//finish appending logs
+//finish json.package
