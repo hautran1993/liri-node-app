@@ -2,7 +2,10 @@
 var keys = require("./keys.js");
 var fs = require("fs");
 var input1 = process.argv[2];
+// var name = input2.join("+");
+// var cmd = name.split("")
 var input2 = process.argv[3];
+
 function listener(action, name){
   switch(action){
     case "my-tweets":
@@ -11,9 +14,12 @@ function listener(action, name){
     case "spotify-this-song":
       grabSong(name);
       break;
+    case "movie-this":
+      grabMovie(name);
+      break;
   }
 }
-listener(input1,input2)
+listener(input1, input2)
 
 
 //0 as the path
@@ -38,8 +44,8 @@ function grabSong(song){
     // var for client spotify key
     var client = new Spotify(keys.spotify);
     // if input is undefined return the sign ace of space
-    if (song === " "){
-        song === "'The Sign' by Ace of Base";
+    if (song === ""){
+        song === "The Sign by Ace of Base";
     }
       client.search({
         type: 'track',
@@ -60,10 +66,16 @@ function grabSong(song){
       });
 }
 
-// function grabMovie(){
-//   var OMDBUrl = "http://www.omdbapi.com/?apikey=" + keys.api_key;
-//
-// }
+function grabMovie(movie){
+  var OMDBUrl = "http://www.omdbapi.com/?apikey=" + (keys.api_key);
+
+  if(movie === ""){
+    movie === "Mr. Nobody"
+  }
+  console.log(movie)
+
+
+}
 
 //make double words possible ex: hey you
 //finish grabMovie
