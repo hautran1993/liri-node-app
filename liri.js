@@ -1,14 +1,25 @@
-var Twitter = require("twitter");
-var twitterKey = require("./keys.js");
-var Spotify = require("node-spotify-api");
-var spotifyKey = require("./keys.js")
+
+var keys = require("./keys.js");
+var fs = require("fs");
 var input = process.argv[2];
-console.log(input);
+var name = process.argv[3];
+
+switch(input){
+  case "my-tweets":
+    grabTweet();
+    break;
+  case "spotify-this-song":
+    grabSong(name);
+    break;
+}
+
+
 //0 as the path
 //1 has the file name. thats why you are always starting with 2
 
 function grabTweet(){
-  var client = new Twitter(twitterKey);
+  var Twitter = require("twitter");
+  var client = new Twitter(keys.twitter);
   var params = {screen_name: 'hautran7'};
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
@@ -19,25 +30,34 @@ function grabTweet(){
   });
 }
 
-function grabSong(){
-  var spotify = new Spotify({
-  id: <your spotify client id>,
-  secret: <your spotify client secret>
-  });
-
-  spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-    if (err) {
-    return console.log('Error occurred: ' + err);
+function grabSong(song){
+    //npm package
+    var Spotify = require("node-spotify-api");
+    // var for client spotify key
+    var client = new Spotify(keys.spotify);
+    // if input is undefined return the sign ace of space
+    if (song === " "){
+        song === "'The Sign' by Ace of Base";
     }
-  console.log(data);
-  });
+      client.search({
+        type: 'track',
+        query: song,
+        limit: 1
+      },
+      function(err, data) {
+          if (err) {
+            console.log('Error occurred: ' + err);
+            return;
+          }
+
+          var str = data.tracks.items[0]
+          console.log(str.name)
+          console.log(str.album.name)
+          console.log(str.artists[0].name)
+          console.log(str.external_urls.spotify)
+      });
 }
 
-switch(input){
-  case `my-tweets`:
-  grabTweet();
-  break;
-  case "spotify-this-song":
-  grabSong();
-  break;
+function grabMovie(){
+  var OMDBUrl = "http://www.omdbapi.com/?apikey=" + keys.api_key;
 }
