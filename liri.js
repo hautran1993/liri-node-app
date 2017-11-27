@@ -68,12 +68,11 @@ function grabSong(song){
 
 function grabMovie(movie){
   var OMDBUrl = "http://www.omdbapi.com/?apikey=" + (keys.api_key);
-
+  var request = require("request")
   if(movie === ""){
-    movie === "Mr. Nobody"
+    movie === "Mr. Nobody";
   }
   console.log(movie)
-
 
 }
 
