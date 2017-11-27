@@ -11,7 +11,7 @@ var input2 = process.argv[3];
 function grabCmd(){
   fs.readFile("random.txt","utf8", function(err, data) {
       if (error){
-        return console.log("Error Occured: " + err)
+        return str +=("Error Occured: " + err)
       }
       var cmd = data.split(",")
       var action = cmd[0];
@@ -61,7 +61,12 @@ function grabTweet(){
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
       for (var i=0; i < tweets.length;i++){
-        console.log(tweets[i].text + tweets[i].created_at);
+        var str = "";
+        str += tweets[i].created_at + '\n';
+        str += tweets[i].text + '\n';
+        grabStr(str);
+        console.log(str);
+
       }
     }
   });
@@ -72,6 +77,7 @@ function grabSong(song){
     const Spotify = require("node-spotify-api");
     // var for client spotify key
     const client = new Spotify(keys.spotify);
+
     // if input is undefined return the sign ace of space
     if (song === undefined){
         song === "The Sign by Ace of Base";
@@ -87,12 +93,15 @@ function grabSong(song){
             return;
           }
 
-          var str = data.tracks.items[0]
-          console.log(str.name)
-          console.log(str.album.name)
-          console.log(str.artists[0].name)
-          console.log(str.external_urls.spotify)
-          grabStr(str.name)
+          const ope = data.tracks.items[0]
+          var str = "";
+          str += "Song: " + ope.name + '\n'
+          str += "Album: " + ope.album.name + '\n'
+          str += "Artist: " + ope.artists[0].name + '\n'
+          str += "Url: " + ope.external_urls.spotify + '\n'
+
+          grabStr(str);
+          console.log(str);
       });
 }
 //function for grabing movies
@@ -107,22 +116,24 @@ function grabMovie(movie){
   request(url, function(error, response, body){
     if(!error && response.statusCode === 200){
       var json = JSON.parse(body)
-      console.log(movie)
-      console.log("released Year : " + json.Year)
-      console.log("IMDB Rating : " + json.imdbRating)
-      console.log("Rotten Tomatoes Rating : " + json.Ratings[1].Value)
-      console.log("Country Where the Movie is Produced is: " + json.Country)
-      console.log("Language of the movie : " + json.Language)
-      console.log("Plot of the Movie : " + json.Plot)
-      console.log("Actors in the Movie : " + json.Actors)
-      grabStr("Actors in the Movie : " + json.Actors)
+      var str = "";
+      str += "Tittle: " + json.movie + '\n'
+      str += "released Year : " + json.Year + '\n'
+      str += "IMDB Rating : " + json.imdbRating + '\n'
+      str += "Rotten Tomatoes Rating : " + json.Ratings[1].Value + '\n'
+      str += "Country Where the Movie is Produced is: " + json.Country + '\n'
+      str += "Language of the movie : " + json.Language + '\n'
+      str += "Plot of the Movie : " + json.Plot + '\n'
+      str += "Actors in the Movie : " + json.Actors + '\n'
+      grabStr(str)
+      console.log(str)
 
     }
   })
 
 }
 
-
+// need to make constant song and movie to show if nothing is entered
 //make double words possible ex: hey you
 //finish grabMovie
 //finish appending logs
