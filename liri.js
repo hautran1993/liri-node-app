@@ -6,6 +6,7 @@ var input1 = process.argv[2];
 // var cmd = name.split("")
 var input2 = process.argv[3];
 //function for a listner for commands in terminal
+//needs to make search available for using multiple words by using .split and .join
 function listener(action, name){
   switch(action){
     case "my-tweets":
@@ -67,14 +68,27 @@ function grabSong(song){
 }
 //function for grabing movies
 function grabMovie(movie){
-  var OMDBUrl = "http://www.omdbapi.com/?apikey=" + (keys.api_key);
-  var movie = input2
   var request = require("request")
-
+  // var apiKey = "40e9cece";
+  var url = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece";
+  var movie = input2
     if(movie === undefined) {
     movie === "Mr. Nobody";
     }
-  console.log(movie)
+  request(url, function(error, response, body){
+    if(!error && response.statusCode === 200){
+      var json = JSON.parse(body)
+      console.log(movie)
+      console.log("released Year : " + json.Year)
+      console.log("IMDB Rating : " + json.imdbRating)
+      console.log("Rotten Tomatoes Rating : " + json.Ratings[1].Value)
+      console.log("Country Where the Movie is Produced is: " + json.Country)
+      console.log("Language of the movie : " + json.Language)
+      console.log("Plot of the Movie : " + json.Plot)
+      console.log("Actors in the Movie : " + json.Actors)
+
+    }
+  })
 
 }
 
