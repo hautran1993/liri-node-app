@@ -40,14 +40,24 @@ function listener(action, name){
 };
 listener(input1, input2)
 
-
+//function to grab all text and adding to log.txt
+function grabStr(str){
+  fs.appendFile("log.txt", "LiriLog: " + str + "\r\n", function(err){
+    if(err){
+      return console.log("Error Occured: " + err)
+    }
+  })
+}
 //0 as the path
 //1 has the file name. thats why you are always starting with 2
 //function for grabing tweets
 function grabTweet(){
-  var Twitter = require("twitter");
-  var client = new Twitter(keys.twitter);
-  var params = {screen_name: 'hautran7'};
+  const Twitter = require("twitter");
+  const client = new Twitter(keys.twitter);
+  var params = {
+    screen_name: 'hautran7',
+    count: 20
+  };
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
       for (var i=0; i < tweets.length;i++){
@@ -59,9 +69,9 @@ function grabTweet(){
 //function for grabing songs
 function grabSong(song){
     //npm package
-    var Spotify = require("node-spotify-api");
+    const Spotify = require("node-spotify-api");
     // var for client spotify key
-    var client = new Spotify(keys.spotify);
+    const client = new Spotify(keys.spotify);
     // if input is undefined return the sign ace of space
     if (song === undefined){
         song === "The Sign by Ace of Base";
@@ -82,11 +92,12 @@ function grabSong(song){
           console.log(str.album.name)
           console.log(str.artists[0].name)
           console.log(str.external_urls.spotify)
+          grabStr(str.name)
       });
 }
 //function for grabing movies
 function grabMovie(movie){
-  var request = require("request")
+  const request = require("request")
   // var apiKey = "40e9cece";
   var url = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece";
   var movie = input2
@@ -104,6 +115,7 @@ function grabMovie(movie){
       console.log("Language of the movie : " + json.Language)
       console.log("Plot of the Movie : " + json.Plot)
       console.log("Actors in the Movie : " + json.Actors)
+      grabStr("Actors in the Movie : " + json.Actors)
 
     }
   })
