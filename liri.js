@@ -5,7 +5,7 @@ var input1 = process.argv[2];
 // var name = input2.join("+");
 // var cmd = name.split("")
 var input2 = process.argv[3];
-
+//function for a listner for commands in terminal
 function listener(action, name){
   switch(action){
     case "my-tweets":
@@ -24,7 +24,7 @@ listener(input1, input2)
 
 //0 as the path
 //1 has the file name. thats why you are always starting with 2
-
+//function for grabing tweets
 function grabTweet(){
   var Twitter = require("twitter");
   var client = new Twitter(keys.twitter);
@@ -37,14 +37,14 @@ function grabTweet(){
     }
   });
 }
-
+//function for grabing songs
 function grabSong(song){
     //npm package
     var Spotify = require("node-spotify-api");
     // var for client spotify key
     var client = new Spotify(keys.spotify);
     // if input is undefined return the sign ace of space
-    if (song === ""){
+    if (song === undefined){
         song === "The Sign by Ace of Base";
     }
       client.search({
@@ -65,13 +65,15 @@ function grabSong(song){
           console.log(str.external_urls.spotify)
       });
 }
-
+//function for grabing movies
 function grabMovie(movie){
   var OMDBUrl = "http://www.omdbapi.com/?apikey=" + (keys.api_key);
+  var movie = input2
   var request = require("request")
-  if(movie === ""){
+
+    if(movie === undefined) {
     movie === "Mr. Nobody";
-  }
+    }
   console.log(movie)
 
 }
