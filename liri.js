@@ -5,8 +5,21 @@ var input1 = process.argv[2];
 // var name = input2.join("+");
 // var cmd = name.split("")
 var input2 = process.argv[3];
-//function for a listner for commands in terminal
 //needs to make search available for using multiple words by using .split and .join
+
+//function to tell liri what to do
+function grabCmd(){
+  fs.readFile("random.txt","utf8", function(err, data) {
+      if (error){
+        return console.log("Error Occured: " + err)
+      }
+      var cmd = data.split(",")
+      var action = cmd[0];
+      var name = cmd[1];
+      listener(action,name)
+  });
+}
+//function for a listner for commands in terminal
 function listener(action, name){
   switch(action){
     case "my-tweets":
@@ -18,8 +31,13 @@ function listener(action, name){
     case "movie-this":
       grabMovie(name);
       break;
-  }
-}
+    case "do-what-it-says":
+      grabCmd();
+      break;
+    default:
+      console.log("Unrecognized command. Please try again" )
+  };
+};
 listener(input1, input2)
 
 
@@ -92,7 +110,12 @@ function grabMovie(movie){
 
 }
 
+
 //make double words possible ex: hey you
 //finish grabMovie
 //finish appending logs
 //finish json.package
+//create a empty variable name str
+//push all files in to the str
+//consolelog the starting
+//use log function to log in str into log.txt
