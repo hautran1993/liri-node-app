@@ -83,3 +83,36 @@ LiriLog: Tue Aug 18 03:17:57 +0000 2015
 I challenged Em and won:) Challenge players from around the world! #BrainWars
 http://t.co/5Xz8J8YYHw http://t.co/s5l6E1xEv9
 
+LiriLog: Tittle: undefined
+released Year : 2011
+IMDB Rating : 7.0
+Rotten Tomatoes Rating : 77%
+Country Where the Movie is Produced is: USA
+Language of the movie : English
+Plot of the Movie : The powerful, but arrogant god Thor, is cast out of Asgard to live amongst humans in Midgard (Earth), where he soon becomes one of their finest defenders.
+Actors in the Movie : Chris Hemsworth, Natalie Portman, Tom Hiddleston, Anthony Hopkins
+LiriLog: Tittle: undefined
+released Year : 1999
+IMDB Rating : 8.7
+Country Where the Movie is Produced is: USA
+Language of the movie : English
+Plot of the Movie : A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
+Actors in the Movie : Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
+
+LiriLog: Tittle: undefined
+released Year : 2009
+IMDB Rating : 7.8
+Country Where the Movie is Produced is: UK, USA
+Language of the movie : English, Spanish
+Plot of the Movie : A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.
+Actors in the Movie : Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang
+
+LiriLog: Tittle: undefined
+released Year : 2009
+IMDB Rating : 7.8
+Rotten Tomatoes Rating : 84%
+Country Where the Movie is Produced is: UK, USA
+Language of the movie : English, Spanish
+Plot of the Movie : A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.
+Actors in the Movie : Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang
+
