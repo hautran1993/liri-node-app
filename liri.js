@@ -1,4 +1,4 @@
-
+//global functions
 var keys = require("./keys.js");
 var fs = require("fs");
 var input1 = process.argv[2];
@@ -13,6 +13,7 @@ function grabCmd(str){
       if (error){
         return str +=("Error Occured: " + err)
       }
+      //cmd shor for data.split
       var cmd = data.split(",")
       var action = cmd[0];
       var name = cmd[1];
@@ -38,6 +39,7 @@ function listener(action, name){
       console.log("Unrecognized command. Please try again" )
   };
 };
+//letting liri knows which place to tager in the array
 listener(input1, input2)
 
 //function to grab all text and adding to log.txt
@@ -120,19 +122,21 @@ function grabMovie(movie){
       str += "Tittle: " + json.movie + '\n'
       str += "released Year : " + json.Year + '\n'
       str += "IMDB Rating : " + json.imdbRating + '\n'
-      str += "Rotten Tomatoes Rating : " + json.Ratings[1].Value + '\n'
+      //str += "Rotten Tomatoes Rating : " + json.Ratings[1].Value + '\n'
       str += "Country Where the Movie is Produced is: " + json.Country + '\n'
       str += "Language of the movie : " + json.Language + '\n'
       str += "Plot of the Movie : " + json.Plot + '\n'
       str += "Actors in the Movie : " + json.Actors + '\n'
       if(json.Ratings[1].Value === true) {
         str += "Rotten Tomatoes Rating : " + json.Ratings[1].Value + '\n'
-      }
-
+      } //might need to be outside of the first if function
       grabStr(str)
       console.log(str)
 
     }
+    // if(json.Ratings[1].Value === true) {
+    //   str += "Rotten Tomatoes Rating : " + json.Ratings[1].Value + '\n'
+    // }
   })
 
 };
