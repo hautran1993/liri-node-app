@@ -386,3 +386,90 @@ Language of the movie : English, Mohawk
 Plot of the Movie : A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
 Actors in the Movie : Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
 
+LiriLog: Tittle: Mr. Nobody
+released Year : 2009
+IMDB Rating : 7.9
+Rotten Tomatoes Rating : 7.9/10
+Country Where the Movie is Produced is: Belgium, Germany, Canada, France, USA, UK
+Language of the movie : English, Mohawk
+Plot of the Movie : A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors in the Movie : Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+LiriLog: Song: The Sign (Originally Performed by Ace of Base) [Karaoke Version]
+Album: The Karaoke Channel - Sing the Sign Like Ace of Base
+Artist: The Karaoke Channel
+Url: https://open.spotify.com/track/1XahejvCmeUcdmQkbp5ZHG
+
+LiriLog: Song: i hate u, i love u (feat. olivia o'brien)
+Album: us
+Artist: gnash
+Url: https://open.spotify.com/track/7vRriwrloYVaoAe3a9wJHe
+
+LiriLog: Song: i hate u, i love u (feat. olivia o'brien)
+Album: us
+Artist: gnash
+Url: https://open.spotify.com/track/7vRriwrloYVaoAe3a9wJHe
+
+LiriLog: Song: i hate u, i love u (feat. olivia o'brien)
+Album: us
+Artist: gnash
+Url: https://open.spotify.com/track/7vRriwrloYVaoAe3a9wJHe
+
+LiriLog: Song: Don't Let Me Down
+Album: Don't Let Me Down
+Artist: The Chainsmokers
+Url: https://open.spotify.com/track/1i1fxkWeaMmKEB4T7zqbzK
+
+LiriLog: Song: Don't Let Me Down
+Album: Don't Let Me Down
+Artist: The Chainsmokers
+Url: https://open.spotify.com/track/1i1fxkWeaMmKEB4T7zqbzK
+
+LiriLog: Song: Don't Let Me Down
+Album: Don't Let Me Down
+Artist: The Chainsmokers
+Url: https://open.spotify.com/track/1i1fxkWeaMmKEB4T7zqbzK
+
+LiriLog: Song: The Sign (Originally Performed by Ace of Base) [Karaoke Version]
+Album: The Karaoke Channel - Sing the Sign Like Ace of Base
+Artist: The Karaoke Channel
+Url: https://open.spotify.com/track/1XahejvCmeUcdmQkbp5ZHG
+
+LiriLog: Song: The Sign (Originally Performed by Ace of Base) [Karaoke Version]
+Album: The Karaoke Channel - Sing the Sign Like Ace of Base
+Artist: The Karaoke Channel
+Url: https://open.spotify.com/track/1XahejvCmeUcdmQkbp5ZHG
+
+LiriLog: Wed Nov 29 21:38:32 +0000 2017
+Lime refreshers and code
+
+LiriLog: Mon Nov 27 21:54:53 +0000 2017
+var stressed = false; 
+function life(stressed){
+ if(stressed=== true){
+ console.log("listen to excision");
+ }
+}
+life(stuck in traffic);
+
+LiriLog: Mon Nov 27 07:29:03 +0000 2017
+dedication === consistiency
+
+LiriLog: Sun Nov 26 02:46:35 +0000 2017
+node test tes
+
+LiriLog: Sat Nov 25 00:45:24 +0000 2017
+hello world
+
+LiriLog: Wed Aug 19 17:16:45 +0000 2015
+I challenged Danylivedream and won:) Challenge players from around the world! #BrainWars
+http://t.co/5Xz8J8YYHw http://t.co/2fYT8EPta1
+
+LiriLog: Tue Aug 18 16:44:26 +0000 2015
+I challenged CFC and won:) Challenge players from around the world! #BrainWars
+http://t.co/5Xz8J8YYHw http://t.co/MtwtkrhNIx
+
+LiriLog: Tue Aug 18 03:17:57 +0000 2015
+I challenged Em and won:) Challenge players from around the world! #BrainWars
+http://t.co/5Xz8J8YYHw http://t.co/s5l6E1xEv9
+
