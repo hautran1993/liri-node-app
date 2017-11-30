@@ -5,6 +5,7 @@ var input1 = process.argv[2];
 // var name = input2.join("+");
 // var cmd = name.split("")
 var input2 = process.argv[3];
+console.log('outside', input2)
 //needs to make search available for using multiple words by using .split and .join
 
 //function to tell liri what to do
@@ -81,8 +82,8 @@ function grabSong(song){
     const client = new Spotify(keys.spotify);
 
     // if input is undefined return the sign ace of space
-    if (song !== undefined){
-        song === "The Sign by Ace of Base";
+    if (song === undefined){
+        song = "The Sign by Ace of Base";
     }
       client.search({
         type: 'track',
@@ -108,30 +109,32 @@ function grabSong(song){
 }
 //function for grabing movies
 function grabMovie(movie){
+  var inputMovie = input2
   const request = require("request")
   // var apiKey = "40e9cece";
-  var url = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece";
-  var movie = input2
-    if(movie !== undefined) {
-    movie === "Mr. Nobody";
-    }
+  if(inputMovie === undefined) {
+   inputMovie = "Mr. Nobody";
+  }
+  var url = "https://www.omdbapi.com/?t=" + inputMovie + "&y=&plot=short&apikey=40e9cece";
   request(url, function(error, response, body){
-    if(!error && response.statusCode === 200){
+    if(!error && response.statusCode === 200) {
       var json = JSON.parse(body)
+      console.log(json);
       var str = "";
-      str += "Tittle: " + json.movie + '\n'
+      //The forEach() method executes a provided function once for each array element.
+      //think about using it for rotten tomato.
+      str += "Tittle: " + json.Title + '\n'
       str += "released Year : " + json.Year + '\n'
       str += "IMDB Rating : " + json.imdbRating + '\n'
-      //str += "Rotten Tomatoes Rating : " + json.Ratings[1].Value + '\n'
+      if (json.Ratings[0]){
+        str += "Rotten Tomatoes Rating : " + json.Ratings[0].Value + '\n'
+      }
       str += "Country Where the Movie is Produced is: " + json.Country + '\n'
       str += "Language of the movie : " + json.Language + '\n'
       str += "Plot of the Movie : " + json.Plot + '\n'
       str += "Actors in the Movie : " + json.Actors + '\n'
-      if(json.Ratings[1].Value === true) {
-        str += "Rotten Tomatoes Rating : " + json.Ratings[1].Value + '\n'
-      } //might need to be outside of the first if function
-      grabStr(str)
-      console.log(str)
+      grabStr(str);
+      console.log(str);
 
     }
     // if(json.Ratings[1].Value === true) {
